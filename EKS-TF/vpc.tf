@@ -33,7 +33,7 @@ resource "aws_subnet" "public-subneta" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = var.subnet-namea
+    Name = var.subnet-name2
   }
 }
 
@@ -44,7 +44,7 @@ resource "aws_subnet" "public-subnetb" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = var.subnet-nameb
+    Name = var.subnet-name2
   }
 }
 
