@@ -26,14 +26,25 @@ data "aws_security_group" "sg-default" {
   }
 }
 
-resource "aws_subnet" "public-subnet2" {
+resource "aws_subnet" "public-subneta" {
   vpc_id                  = data.aws_vpc.vpc.id
   cidr_block              = "10.0.2.0/24"
-  availability_zone       = "ap-southeast-1a, ap-southeast-1b, ap-southeast-1c"
+  availability_zone       = "ap-southeast-1a"
   map_public_ip_on_launch = true
 
   tags = {
-    Name = var.subnet-name2
+    Name = var.subnet-namea
+  }
+}
+
+resource "aws_subnet" "public-subnetb" {
+  vpc_id                  = data.aws_vpc.vpc.id
+  cidr_block              = "10.0.2.0/24"
+  availability_zone       = "ap-southeast-1b"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.subnet-nameb
   }
 }
 
